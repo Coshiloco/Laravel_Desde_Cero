@@ -20,3 +20,4 @@ Route::get('/', function () {
 Route::get('/ruta/', function () {
     return "Hola Mundo soy el ENrutamiento en Laravel";
 });
+

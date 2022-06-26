@@ -1,6 +1,11 @@
 <?php
 
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response as Psr7Response;
+use Illuminate\Http\Request as HttpRequest;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Response as FacadesResponse;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,5 +29,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/contact', function () {
-    return view('contact');
+    return FacadesResponse::view('contact');
+});
+
+Route::post('/contact', function (HttpRequest $request) {
+    dd($request->get('phone_number'));
 });

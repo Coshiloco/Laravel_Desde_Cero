@@ -13,6 +13,7 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         '/ruta/post/',
-        '/contact'
+        '/contact',
+        '/change_password'
     ];
 }

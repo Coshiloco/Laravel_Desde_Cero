@@ -10,7 +10,6 @@
           <div class="card-body">
             <form method="POST" action="/change_password">
               @csrf
-
               <div class="row mb-3">
                 <label for="name"
                   class="col-md-4 col-form-label text-md-end">New Password</label>

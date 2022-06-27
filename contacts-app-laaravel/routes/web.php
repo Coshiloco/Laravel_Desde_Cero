@@ -2,11 +2,14 @@
 
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response as Psr7Response;
+use Illuminate\Auth\Access\Response as AccessResponse;
 use Illuminate\Http\Request as HttpRequest;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response as FacadesResponse;
 use Illuminate\Support\Facades\Route;
+use Spatie\FlareClient\Http\Response as HttpResponse;
+use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +38,5 @@ Route::get('/contact', function () {
 Route::post('/contact', function (HttpRequest $request) {
     dd($request->get('phone_number'));
 });
+
+Route::get('/change_password', fn () => FacadesResponse::view('change_password'));

@@ -34,20 +34,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/contact', function () {
-    return FacadesResponse::view('contact');
-});
 
-Route::post('/contact', function (HttpRequest $request) {
-    dd($request->get('phone_number'));
-});
-
-Route::get('/change_password', fn () => FacadesResponse::view('change_password'));
-
-Route::post('/change_password', function (HttpRequest $request) {
-    if (auth()->check()) {
-        return response("Password CHenged to {$request->get('password')}");
-    } else {
-        return new response("NOt authenticate", 401);
-    }
-});
